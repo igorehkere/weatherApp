@@ -10,14 +10,19 @@
 <body>
     <div id="weatherApp">
         <div id="inp">
-            <input id="input" type="text">
+            <input id="input" type="text" autocomplete="off">
             <img id="search-icon" src="photo/search.png" height="31px" width="31px">
         </div>
         <div id="temp">
-            <img src="photo/cloudy.png" height="94px" width="122px">
+            <img id="weathPhoto" src="photo/cloudy.png" height="94px" width="122px">
             <p id="grad">FF ° C</p>
+            
         </div>
-        <p id="day">FFth Jun FF</p>
+        <p id="weatherName"></p>
+        <div>
+            <p id="day">FFth Jun FF</p> 
+        </div>
+        
         <div id="data">
             <p id="dayWeek">Thurday</p>
             <p id="time">FF am</p>

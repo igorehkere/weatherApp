@@ -40,6 +40,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 15px;
     font-size: 64px;
     font-family: sans-serif;
 }
@@ -51,7 +52,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     font-size: 24px;
 }
 #param, #wind, #hum {
@@ -60,4 +61,9 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 22px;
+}
+#weatherName {
+    position: absolute;
+    top: 310px;
+    font-size: 36px;
 }

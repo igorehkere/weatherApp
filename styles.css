@@ -68,75 +68,7 @@ body {
     top: 310px;
     font-size: 36px;
 }
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-        height: auto;
-        min-height: 100vh;
-        align-items: flex-start; /* Меняем на flex-start для скролла */
-        padding-top: 40px;
-    }
-    
-    #weatherApp {
-        width: 95%;
-        min-height: 600px;
-        gap: 20px;
-        padding: 25px 15px;
-    }
-    
-    #inp {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    #input {
-        width: 100%;
-        max-width: 350px;
-        height: 50px;
-        font-size: 22px;
-    }
-    
-    #temp {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-        font-size: 48px;
-    }
-    
-    #weathPhoto {
-        width: 70px;
-        height: auto;
-    }
-    
-    #day {
-        font-size: 28px;
-    }
-    
-    #weatherName {
-        font-size: 24px;
-        padding: 8px 20px;
-        width: 90%;
-    }
-    
-    #data {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        font-size: 22px;
-    }
-    
-    #param {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-    }
-    
-    #wind, #hum {
-        width: 80%;
-        justify-content: center;
-        padding: 12px;
-    }
-}
+
 @media (max-width: 480px) {
     #weatherApp {
         width: 100%;
@@ -185,5 +117,23 @@ body {
     #wind img, #hum img {
         height: 16px;
         width: 16px;
+    }
+}
+@media (max-width: 360px) {
+    #temp {
+        font-size: 36px;
+    }
+    
+    #day {
+        font-size: 20px;
+    }
+    
+    #weatherName {
+        font-size: 18px;
+    }
+    
+    #input {
+        font-size: 16px;
+        height: 40px;
     }
 }

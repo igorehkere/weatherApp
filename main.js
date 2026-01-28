@@ -14,7 +14,7 @@ search.addEventListener('click', async (event) => {
     const cloudy = ['cloudy' , 'partly cloudy'];
     const rainy = ['patchy rain nearby', 'light drizzle', 'light rain', 'moderate rain', 'light freezing rain', 'light rain shower', 'rain'];
     const foggy = ['haze', 'mist', 'freezing fog'];
-    const snow = ['heavy snow', 'moderate snow', 'light snow', 'freezing drizzle', 'snow', 'light snow shower', 'blowing snow'];
+    const snow = ['heavy snow', 'moderate snow', 'light snow', 'freezing drizzle', 'snow', 'light snow shower', 'blowing snow', 'snow shower'];
     const city = input.value;
     if (city === '' || city === undefined) {
         alert('Введите название города')

@@ -20,7 +20,7 @@ search.addEventListener('click', async (event) => {
         alert('Введите название города')
         return
     }
-    wph.setAttribute('src', 'photo/download.gif');
+    wph.setAttribute('src', 'photo/download3.gif');
     wph.setAttribute('height', '64px');
     wph.setAttribute('width', '64px');
     try {

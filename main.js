@@ -23,45 +23,55 @@ search.addEventListener('click', async (event) => {
     wph.setAttribute('src', 'photo/download.gif');
     wph.setAttribute('height', '64px');
     wph.setAttribute('width', '64px');
-    const info = await getFetch(city);
-    const description = info.description.toLowerCase();
-    if (sunny.includes(description)) {
-        wph.setAttribute('src', 'photo/icons/Sunny.png');
-        wph.setAttribute('width', '64px');
-        wph.setAttribute('height', '64px');
-        nameW.textContent = 'Sunny';
-    } else if (rainy.includes(description)) {
-        wph.setAttribute('src', 'photo/icons/Rainy1.png');
-        wph.setAttribute('width', '102px');
+    try {
+        const info = await getFetch(city);
+        const description = info.description.toLowerCase();
+        if (sunny.includes(description)) {
+            wph.setAttribute('src', 'photo/icons/Sunny.png');
+            wph.setAttribute('width', '64px');
+            wph.setAttribute('height', '64px');
+            nameW.textContent = 'Sunny';
+        } else if (rainy.includes(description)) {
+            wph.setAttribute('src', 'photo/icons/Rainy1.png');
+            wph.setAttribute('width', '102px');
+            wph.setAttribute('height', '74px');
+            nameW.textContent = 'Rainy';
+        } else if (cloudy.includes(description)) {
+            wph.setAttribute('src', 'photo/icons/Cloudy.png');
+            wph.setAttribute('width', '102px');
+            wph.setAttribute('height', '74px');
+            nameW.textContent = 'Cloudy';
+        } else if (foggy.includes(description)) {
+            wph.setAttribute('src', 'photo/icons/Fog.png');
+            wph.setAttribute('width', '102px');
+            wph.setAttribute('height', '74px');
+            nameW.textContent = 'Fog';
+        } else if (snow.includes(description)) {
+            wph.setAttribute('src', 'photo/icons/Snow.png');
+            wph.setAttribute('width', '102px');
+            wph.setAttribute('height', '74px');
+            nameW.textContent = 'Snow';
+        } else {
+            wph.setAttribute('src', 'photo/cloudy.png');
+        }
+        console.log(description);
+        grad.textContent = info.temperature;
+        speed.textContent = `Wind: ${info.wind}`;
+        humproc.textContent = `Hum: ${Math.trunc(Math.random()*100)}%`
+        console.log(info); 
+    } catch(err) {
+        nameW.textContent = 'ERROR';
+        wph.setAttribute('src', 'photo/error.png')
+        wph.setAttribute('width', '82px');
         wph.setAttribute('height', '74px');
-        nameW.textContent = 'Rainy';
-    } else if (cloudy.includes(description)) {
-        wph.setAttribute('src', 'photo/icons/Cloudy.png');
-        wph.setAttribute('width', '102px');
-        wph.setAttribute('height', '74px');
-        nameW.textContent = 'Cloudy';
-    } else if (foggy.includes(description)) {
-        wph.setAttribute('src', 'photo/icons/Fog.png');
-        wph.setAttribute('width', '102px');
-        wph.setAttribute('height', '74px');
-        nameW.textContent = 'Fog';
-    } else if (snow.includes(description)) {
-        wph.setAttribute('src', 'photo/icons/Snow.png');
-        wph.setAttribute('width', '102px');
-        wph.setAttribute('height', '74px');
-        nameW.textContent = 'Snow';
-    } else {
-        wph.setAttribute('src', 'photo/cloudy.png');
+    } finally {
+        const date = new Date();
+        dayWeek.textContent = `${days[date.getDay() - 1]}`
+        time.textContent = `${date.getHours()}:${date.getMinutes()}`
+        day.textContent = `${date.getDate()}th Jun 26`;
     }
-    console.log(description);
-    grad.textContent = info.temperature;
-    speed.textContent = `Wind: ${info.wind}`;
-    humproc.textContent = `Hum: ${Math.trunc(Math.random()*100)}%`
-    console.log(info);
-    const date = new Date();
-    dayWeek.textContent = `${days[date.getDay() - 1]}`
-    time.textContent = `${date.getHours()}:${date.getMinutes()}`
-    day.textContent = `${date.getDate()}th Jun 26`;
+    
+    
 })
 async function getFetch(city) {
     const prom = await fetch(`https://goweather.herokuapp.com/weather/${city}`);
